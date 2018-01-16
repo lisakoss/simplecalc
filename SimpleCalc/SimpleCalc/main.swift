@@ -25,8 +25,43 @@ public class Calculator {
             default:
                 return 0
             }
+        } else {
+            switch args[args.count - 1] {
+            case "count":
+                if args.count == 1 {
+                    return 0
+                } else {
+                    var total = 0
+                    for _ in 0...(args.count - 2) {
+                        total += 1
+                    }
+                    return total
+                }
+            case "avg":
+                if args.count == 1 {
+                    return 0
+                } else {
+                    var total = 0
+                    for i in 0...(args.count - 2) {
+                        total += Int(args[i])!
+                    }
+                    return total / (args.count - 1)
+                }
+            case "fact":
+                if args.count == 1 {
+                    return 0
+                } else {
+                    var total = 1
+                    for i in 1...Int(args[0])! {
+                        total *= i
+                    }
+                    print(total)
+                    return total 
+                }
+            default:
+                return 0
+            }
         }
-        return 0
     }
     
     public func calculate(_ arg: String) -> Int {
