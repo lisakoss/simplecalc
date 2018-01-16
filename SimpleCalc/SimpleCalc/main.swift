@@ -9,6 +9,8 @@
 import Foundation
 
 public class Calculator {
+    
+    // Performs complex or basic operations on given expression
     public func calculate(_ args: [String]) -> Int {
         // check for complex operators (count, avg, fact)
         if(args.count > 1) {
@@ -60,6 +62,7 @@ public class Calculator {
         return 0 // default with no match
     }
     
+    // Splits given expression on a space.
     public func calculate(_ arg: String) -> Int {
         return calculate( arg.split(separator: " ").map({ substr in String(substr) }) )
     }
