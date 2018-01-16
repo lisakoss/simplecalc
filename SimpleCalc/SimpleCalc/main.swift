@@ -10,6 +10,8 @@ import Foundation
 
 public class Calculator {
     public func calculate(_ args: [String]) -> Int {
+        
+        // basic operators (+, -, /, %, *)
         if(args.count == 3) {
             switch args[1] {
             case "+":
@@ -25,7 +27,7 @@ public class Calculator {
             default:
                 return 0
             }
-        } else {
+        } else { // complex operators (count, avg, fact)
             switch args[args.count - 1] {
             case "count":
                 if args.count == 1 {
@@ -55,7 +57,6 @@ public class Calculator {
                     for i in 1...Int(args[0])! {
                         total *= i
                     }
-                    print(total)
                     return total 
                 }
             default:
